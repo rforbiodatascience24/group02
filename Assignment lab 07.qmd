@@ -1,6 +1,8 @@
 ---
-title: "Assignment Lab 07"
-format: html
+title: "Lab 7 Assignment: Group 02"
+format:
+  html:
+    embed-resources: true
 editor: visual
 ---
 
@@ -24,7 +26,49 @@ We're loading the data, and since it's a dataset on biopsies, that's what we wil
 ```{r}
 #| echo: False
 library(tidyverse)
-library(broom)
 biopsy <- read_csv('https://wilkelab.org/classes/SDS348/data_sets/biopsy.csv')
 biopsy
+```
+
+### The distribution of benign and malignant outcomes 
+
+```{r}
+p1 <- biopsy |> 
+  count(uniform_cell_size, 
+        outcome) |> 
+  ggplot(aes(uniform_cell_size, 
+             n, 
+             fill = outcome)) + 
+  geom_col(position = position_dodge(preserve = "single"),
+           color = "black",
+           alpha = 0.5) +
+  geom_hline(yintercept = 0) +
+  theme_minimal() +
+  theme(legend.position = "bottom") +
+  labs(x = "Uniform cell size",
+      y = "Count",
+      title = "The distribution of uniform cell size")
+
+p2 <- biopsy |> 
+  ggplot(aes(clump_thickness,
+             outcome,
+             fill = outcome)) +
+  geom_boxplot(alpha = 0.5) + 
+  theme_minimal() +
+  theme(legend.position = "bottom") +
+  labs(x = "Clump thickness",
+       y = "Outcome",
+       titel = "The distribution of clump thickness")
+```
+
+Fist we look at the dispersion when looking at uniform cell size biopsies:
+
+```{r}
+p1
+```
+
+Now we look at the clump thickness:
+
+```{r}
+p2
 ```
