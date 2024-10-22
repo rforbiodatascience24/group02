@@ -6,6 +6,15 @@ editor: visual
 
 ## Micro-report lab 07
 
+Our group:
+
+| Name                        | Student ID |
+|-----------------------------|------------|
+| Lukas Kjær Sebblow          | s225071    |
+| Hans Christian M. Henriksen | s224987    |
+| Mia Thao Enné               | s225029    |
+| Fabrice Tangih Fongwa       | s240038    |
+
 ### Loading the data
 
 The data is taken from “PCA tidyverse style” by Claus O. Wilke, Professor of Integrative Biology. It's a biopsy data set, based on breast cancer patients from the University of Wisconsin Hospital. The doctor in charge assessed biopsies from 699 patients.
