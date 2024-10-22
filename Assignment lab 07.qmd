@@ -30,16 +30,21 @@ biopsy <- read_csv('https://wilkelab.org/classes/SDS348/data_sets/biopsy.csv')
 biopsy
 ```
 
-### The distribution of benign and malignant outcomes 
+### The distribution of benign and malignant outcomes
+
+We are interested in division between benign and malignant outcomes from the biopsies. We have decided to focusing on uniform cell size and clump thickness.
+
+First we program the plots:
 
 ```{r}
+# Uniform cell size is going to be a colunm chart, hence we need a count
 p1 <- biopsy |> 
   count(uniform_cell_size, 
         outcome) |> 
   ggplot(aes(uniform_cell_size, 
-             n, 
+             n, # This is the counter
              fill = outcome)) + 
-  geom_col(position = position_dodge(preserve = "single"),
+  geom_col(position = position_dodge(preserve = "single"), # Now nothing overlaps
            color = "black",
            alpha = 0.5) +
   geom_hline(yintercept = 0) +
@@ -49,6 +54,7 @@ p1 <- biopsy |>
       y = "Count",
       title = "The distribution of uniform cell size")
 
+# Clump thickness is going to be a boxplot
 p2 <- biopsy |> 
   ggplot(aes(clump_thickness,
              outcome,
@@ -67,8 +73,16 @@ Fist we look at the dispersion when looking at uniform cell size biopsies:
 p1
 ```
 
+From the data set we know that every attribute was rated on a scale from 1 to 10, where 1 was the best. From the chart above we can see that most of the benign revived less than 4, although there are some outliers. Malignant is more broadly scattered in it's rating, and hence it seen throughout the whole chart.
+
+We can see a tendency that the more uniform the cell sizes are the more likely they are to be benign. We cannot state it for a fact, mainly because there are found malignant cells all over the spectrum. Hence biopsies and analysis are necessary.
+
 Now we look at the clump thickness:
 
 ```{r}
 p2
 ```
+
+We can conclude most of the same from this graph, that we did at the prior one.
+
+We can see that most benign cells are found lower on the scale and that malignant cells can be found all over the spectrum. This shows again the importance of biopsies analysis.
