@@ -19,9 +19,11 @@ Our group:
 
 The data is taken from “PCA tidyverse style” by Claus O. Wilke, Professor of Integrative Biology. It's a biopsy data set, based on breast cancer patients from the University of Wisconsin Hospital. The doctor in charge assessed biopsies from 699 patients.
 
-```         
-biopsy <- read_csv("https://wilkelab.org/classes/SDS348/data_sets/biopsy.csv")
-```
+We're loading the data, and since it's a dataset on biopsies, that's what we will call it.
 
-```         
+```{r}
+library(tidyverse)
+library(broom)
+biopsy <- read_csv('https://wilkelab.org/classes/SDS348/data_sets/biopsy.csv')
+biopsy
 ```
