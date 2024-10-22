@@ -11,6 +11,10 @@ editor: visual
 2 + 2
 ```
 
+## New Analysis 
+
+¯\\\_( ͡° ͜ʖ ͡°)\_/¯
+
 # Mia
 
 ```{r}
