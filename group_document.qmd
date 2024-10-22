@@ -6,7 +6,13 @@ editor: visual
 
 # HC
 
-# MIA
+# Mia
+
+```{r}
+print("hello world") #i dont know why it's scheduled for later, but i have some code in here now. 
+#Lol hi, do you come here often? 
+
+```
 
 # Lukas
 
