@@ -6,6 +6,11 @@ editor: visual
 
 # HC
 
+```{r}
+#| echo = false
+2 + 2
+```
+
 # Mia
 
 ```{r}
