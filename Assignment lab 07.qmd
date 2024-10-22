@@ -6,7 +6,7 @@ editor: visual
 
 ## Micro-report lab 07
 
-### Loading the data 
+### Loading the data
 
 The data is taken from “PCA tidyverse style” by Claus O. Wilke, Professor of Integrative Biology. It's a biopsy data set, based on breast cancer patients from the University of Wisconsin Hospital. The doctor in charge assessed biopsies from 699 patients.
 
